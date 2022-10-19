@@ -8,15 +8,14 @@ class NegociacoesView extends View {
 
         return `
         <table class="table table-hover table-bordered">
-            <thead>
+             <thead>
                 <tr>
-                    <th>DATA</th>
-                    <th>QUANTIDADE</th>
-                    <th>VALOR</th>
-                    <th>VOLUME</th>
+                    <th onclick="negociacaoController.ordena('data')">DATA</th>
+                    <th onclick="negociacaoController.ordena('quantidade')">QUANTIDADE</th>
+                    <th onclick="negociacaoController.ordena('valor')">VALOR</th>
+                    <th onclick="negociacaoController.ordena('volume')">VOLUME</th>
                 </tr>
             </thead>
-            
             <tbody>
                 ${model.negociacoes.map(negociacao => `
                     <tr>
@@ -27,7 +26,6 @@ class NegociacoesView extends View {
                     </tr>
                 `).join("")}
             </tbody>
-            
             <tfoot>
                 <td colspan = 3><b>VOLUME TOTAL:</b></td>
                 <td>
